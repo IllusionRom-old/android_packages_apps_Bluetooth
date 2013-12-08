@@ -2,6 +2,8 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+LOCAL_CFLAGS += -O3 -g -fno-permissive
+
 LOCAL_SRC_FILES:= \
     com_android_bluetooth_btservice_AdapterService.cpp \
     com_android_bluetooth_hfp.cpp \
@@ -23,7 +25,6 @@ LOCAL_SHARED_LIBRARIES := \
     liblog \
     libhardware
 
-#LOCAL_CFLAGS += -O0 -g
 
 LOCAL_MODULE := libbluetooth_jni
 LOCAL_MODULE_TAGS := optional

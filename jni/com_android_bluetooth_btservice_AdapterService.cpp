@@ -345,7 +345,7 @@ static void discovery_state_changed_callback(bt_discovery_state_t state) {
     checkAndClearExceptionFromCallback(callbackEnv, __FUNCTION__);
 }
 
-static void pin_request_callback(bt_bdaddr_t *bd_addr, bt_bdname_t *bdname, uint32_t cod) {
+static void pin_request_callback(bt_bdaddr_t *bd_addr, bt_bdname_t *bdname, uint32_t cod, uint8_t secure) {
     jbyteArray addr, devname;
     if (!checkCallbackThread()) {
        ALOGE("Callback: '%s' is not called on the correct thread", __FUNCTION__);
